@@ -39,7 +39,8 @@ class Advent2019Tests(unittest.TestCase):
         f.close()
 
         arr = list(map(int, contents.split(',')))
-        # ans = day2_problem2.solve(arr)
+        ans = day2_problem2.solve(arr, 19690720)
+        self.assertEqual(ans, 3951)
 
 if __name__ == "__main__":
     unittest.main()
