@@ -4,10 +4,12 @@ import day1.problem1 as day1_problem1
 import day1.problem2 as day1_problem2
 import day2.problem1 as day2_problem1
 import day2.problem2 as day2_problem2
+import day3.problem1 as day3_problem1
+import day3.problem2 as day3_problem2
 
 class Advent2019Tests(unittest.TestCase):
     def test_day1_problem1(self):
-        f = open("day1/input1.txt")
+        f = open("day1/input.txt")
         contents = f.read()
         f.close()
         
@@ -16,7 +18,7 @@ class Advent2019Tests(unittest.TestCase):
         self.assertEqual(ans, 3268951)
     
     def test_day1_problem2(self):
-        f = open("day1/input2.txt")
+        f = open("day1/input.txt")
         contents = f.read()
         f.close()
 
@@ -25,7 +27,7 @@ class Advent2019Tests(unittest.TestCase):
         self.assertEqual(ans, 4900568)
         
     def test_day2_problem1(self):
-        f = open("day2/input1.txt")
+        f = open("day2/input.txt")
         contents = f.read()
         f.close()
 
@@ -34,13 +36,31 @@ class Advent2019Tests(unittest.TestCase):
         self.assertEqual(ans, 6568671)
 
     def test_day2_problem2(self):
-        f = open("day2/input2.txt")
+        f = open("day2/input.txt")
         contents = f.read()
         f.close()
 
         arr = list(map(int, contents.split(',')))
         ans = day2_problem2.solve(arr, 19690720)
         self.assertEqual(ans, 3951)
+
+    def test_day3_problem1(self):
+        f = open("day3/input.txt")
+        contents = f.read()
+        paths = [x.split(',') for x in contents.split('\n')]
+        f.close()
+        
+        ans = day3_problem1.solve(paths[0], paths[1])
+        self.assertEqual(ans, 1017)
+
+    def test_day3_problem2(self):
+        f = open("day3/input.txt")
+        contents = f.read()
+        paths = [x.split(',') for x in contents.split('\n')]
+        f.close()
+
+        ans = day3_problem2.solve(paths[0], paths[1])
+        self.assertEqual(ans, 11432)
 
 if __name__ == "__main__":
     unittest.main()
