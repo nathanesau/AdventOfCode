@@ -42,7 +42,3 @@ def solve(path1, path2):
                 mdistance_closest = mdistance_square1
 
     return mdistance_closest
-
-    
-    
-
