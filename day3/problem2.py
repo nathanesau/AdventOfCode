@@ -1,4 +1,4 @@
-# https://adventofcode.com/2019/day/3
+# https://adventofcode.com/2019/day/3#part2
 
 def get_visited_squares(path):
     visited = {} # store number of steps to this point
