@@ -27,9 +27,6 @@ def get_visited_squares(path):
         prev_steps = prev_steps + abs(amount)
     return visited
 
-def mdistance(point1, point2):
-    return abs(point2[0] - point1[0]) + abs(point2[1] - point1[1])
-
 def solve(path1, path2):
     visited1 = get_visited_squares(path1)
     visited2 = get_visited_squares(path2)
