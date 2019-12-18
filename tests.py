@@ -6,6 +6,8 @@ import day2.problem1 as day2_problem1
 import day2.problem2 as day2_problem2
 import day3.problem1 as day3_problem1
 import day3.problem2 as day3_problem2
+import day4.problem1 as day4_problem1
+import day4.problem2 as day4_problem2
 
 class Advent2019Tests(unittest.TestCase):
     def test_day1_problem1(self):
@@ -47,20 +49,38 @@ class Advent2019Tests(unittest.TestCase):
     def test_day3_problem1(self):
         f = open("day3/input.txt")
         contents = f.read()
-        paths = [x.split(',') for x in contents.split('\n')]
         f.close()
         
+        paths = [x.split(',') for x in contents.split('\n')]
         ans = day3_problem1.solve(paths[0], paths[1])
         self.assertEqual(ans, 1017)
 
     def test_day3_problem2(self):
         f = open("day3/input.txt")
         contents = f.read()
-        paths = [x.split(',') for x in contents.split('\n')]
         f.close()
 
+        paths = [x.split(',') for x in contents.split('\n')]
         ans = day3_problem2.solve(paths[0], paths[1])
         self.assertEqual(ans, 11432)
+
+    def test_day4_problem1(self):
+        f = open("day4/input.txt")
+        contents = f.read()
+        f.close()
+
+        prange = list(map(int, contents.split('-')))
+        ans = day4_problem1.solve(prange)
+        self.assertEqual(ans, 579)
+
+    def test_day4_problem2(self):
+        f = open("day4/input.txt")
+        contents = f.read()
+        f.close()
+
+        prange = list(map(int, contents.split('-')))
+        ans = day4_problem2.solve(prange)
+        self.assertEqual(ans, 358)
 
 if __name__ == "__main__":
     unittest.main()
