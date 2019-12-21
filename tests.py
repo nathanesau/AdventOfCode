@@ -8,6 +8,8 @@ import day3.problem1 as day3_problem1
 import day3.problem2 as day3_problem2
 import day4.problem1 as day4_problem1
 import day4.problem2 as day4_problem2
+import day5.problem1 as day5_problem1
+import day5.problem2 as day5_problem2
 
 class Advent2019Tests(unittest.TestCase):
     def test_day1_problem1(self):
@@ -68,7 +70,7 @@ class Advent2019Tests(unittest.TestCase):
         f = open("day4/input.txt")
         contents = f.read()
         f.close()
-
+    
         prange = list(map(int, contents.split('-')))
         ans = day4_problem1.solve(prange)
         self.assertEqual(ans, 579)
@@ -77,10 +79,28 @@ class Advent2019Tests(unittest.TestCase):
         f = open("day4/input.txt")
         contents = f.read()
         f.close()
-
+    
         prange = list(map(int, contents.split('-')))
         ans = day4_problem2.solve(prange)
         self.assertEqual(ans, 358)
+
+    def test_day5_problem1(self):
+        f = open("day5/input.txt")
+        contents = f.read()
+        f.close()
+
+        arr = list(map(int, contents.split(',')))
+        ans = day5_problem1.solve(arr, 1)
+        self.assertEqual(ans, 15259545)
+
+    def test_day5_problem2(self):
+        f = open("day5/input.txt")
+        contents = f.read()
+        f.close()
+
+        arr = list(map(int, contents.split(',')))
+        ans = day5_problem2.solve(arr, 5)
+        self.assertEqual(ans, 7616021)
 
 if __name__ == "__main__":
     unittest.main()
